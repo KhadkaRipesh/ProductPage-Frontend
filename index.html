@@ -16,19 +16,29 @@
       font-family: Poppins, sans-serif;
       font-size: 13px;
     }
+    .row {
+      display: flex;
+    }
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 1200px;
+    }
     nav,
     .left,
     .right {
-      justify-content: center;
-      align-items: center;
       display: flex;
       color: #6c6c6c;
+      justify-content: center;
+      align-items: center;
     }
     .left {
       gap: 10px;
     }
     .right {
-      margin-left: 500px;
+      margin-left: auto;
     }
     li {
       list-style-type: none;
@@ -50,28 +60,99 @@
     i {
       font-size: 10px;
     }
-    a:hover{
-      color: #6BCE04;
+    a:hover {
+      color: #6bce04;
+    }
+    .bottom {
+      padding: 24px 0;
+    }
+    form {
+      color: #555;
+      display: flex;
+      padding: 2px;
+      border: 1px solid currentColor;
+      border-radius: 23px;
+      margin: 0 0 30px;
+      margin-left: auto;
+    }
+
+    input[type="search"] {
+      border: none;
+      background: transparent;
+      margin: 0;
+      padding: 10px 18px;
+      font-size: 14px;
+      color: inherit;
+      border-radius: 23px;
+      height: 45px;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    input[type="search"]::placeholder {
+      border: 1px solid transparent;
+
+      color: #bbb;
+    }
+
+    button[type="submit"] {
+      text-indent: -999px;
+      overflow: hidden;
+      width: 40px;
+      padding: 0;
+      margin: 0;
+      border: 1px solid transparent;
+      border-radius: inherit;
+      background: transparent
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+        no-repeat center;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 1;
+    }
+
+    button[type="submit"]:focus,
+    input[type="search"]:focus {
+      border-color: none;
+      outline: none;
     }
   </style>
   <body>
     <nav>
-      <div class="left">
-        <p>Support: 9825013777</p>
-        <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
-      </div>
-      <div class="right">
-        <a href="#">
-          <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
-        </a>
-        <a href="#">
-          <li><i class="fa-solid fa-user"></i>Create Account</li>
-        </a>
-        <a href="#">
-          <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
-        </a>
+      <div class="container">
+        <div class="row">
+          <div class="left">
+            <p>Support: 9825013777</p>
+            <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
+          </div>
+          <div class="right">
+            <a href="#">
+              <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
+            </a>
+            <a href="#">
+              <li><i class="fa-solid fa-user"></i>Create Account</li>
+            </a>
+            <a href="#">
+              <li><i class="fa-solid fa-right-to-bracket"></i>Login</li>
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
     <div class="line"></div>
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+          <h1>Lugaa</h1>
+          <form>
+            <input type="search" placeholder="Search..." />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
