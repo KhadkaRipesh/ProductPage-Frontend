@@ -134,6 +134,7 @@
     .category {
       color: white;
       display: flex;
+      font-size: 15px;
     }
     .menu .left {
       color: #fff;
@@ -167,6 +168,33 @@
     .menu .right i {
       font-size: 12px;
       margin-bottom: 2px;
+    }
+    .drop-down {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      border: 1px solid #6bce04;
+      width: 263px;
+      margin-left: -49px;
+      margin-top: -15px;
+      font-size: 13px;
+      background-color: #fff;
+    }
+    .drop-down li {
+      border-bottom: 1px solid #dddddd;
+      color: #6c6c6c;
+    }
+    .drop-down li:hover {
+      box-shadow: #6c6c6c;
+      color: #6bce04;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    .show {
+      display: block;
+    }
+    .slide {
+      background: #f2f2f2;
+      height: 800px;
     }
   </style>
   <body>
@@ -206,9 +234,25 @@
     <div class="menu">
       <div class="container">
         <div class="row">
-          <div class="left">
+          <div class="left" onclick="myFunction()">
             <i class="fa-solid fa-bars"></i>
-            <p class="category">Category</p>
+            <div class="dropdown">
+              <p class="category">Category</p>
+              <div class="drop-down" id="drop">
+                <a href="#">
+                  <li>T-Shirt</li>
+                </a>
+                <a href="#">
+                  <li>Pant</li>
+                </a>
+                <a href="#">
+                  <li>Shoe</li>
+                </a>
+                <a href="#">
+                  <li>Fashion</li>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="right">
             <a href="#">
@@ -221,5 +265,11 @@
         </div>
       </div>
     </div>
+    <div class="slide"></div>
+    <script>
+      function myFunction() {
+        document.getElementById("drop").classList.toggle("show");
+      }
+    </script>
   </body>
 </html>
