@@ -158,9 +158,11 @@
       font-weight: 600;
       font-size: 14px;
       font-family: Poppins, sans-serif;
+      cursor: auto;
     }
-    .menu .right a:hover {
+    .menu .right li:hover {
       color: #6bce04;
+      cursor: pointer;
     }
     .menu .row {
       height: 55px;
@@ -265,10 +267,43 @@
         </div>
       </div>
     </div>
-    <div class="slide"></div>
+    <div class="slide">
+      <div class="container">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="./slider1.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="./slider2" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="./slider3.webp" style="width: 100%" />
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
+      }
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
       }
     </script>
   </body>
