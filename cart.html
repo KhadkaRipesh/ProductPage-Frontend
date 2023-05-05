@@ -196,7 +196,9 @@
     }
     .slide {
       background: #f2f2f2;
-      height: 800px;
+      padding-bottom: 80px;
+
+      /* height: 800px; */
     }
     .footer_head {
       height: 60px;
@@ -221,6 +223,15 @@
       height: 400px;
       align-items: center;
     }
+
+    p.cart_head {
+      margin-top: 0em;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 900;
+      margin-left: 20px;
+      padding-top: 20px;
+    }
     .flexbox {
       display: flex;
       gap: 80px;
@@ -240,10 +251,82 @@
       font-size: 16px;
     }
 
-
-
-    /* Tables */
-
+    /* creating tables */
+    .table thead.thead-primary {
+      border-collapse: collapse;
+      background: #6bce04;
+    }
+    .table thead th {
+      border: none;
+      padding: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: white;
+    }
+    table {
+      min-width: 1000px !important;
+      width: 100%;
+      background: #fff;
+      -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+      -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+      box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+    }
+    .table tbody tr {
+      margin-bottom: 10px;
+    }
+    .table tbody th,
+    .table tbody td {
+      border: none;
+      padding: 30px;
+      font-size: 14px;
+      background: #fff;
+      border-bottom: 4px solid #f8f9fd;
+      vertical-align: middle;
+    }
+    .table tbody td.quantity {
+      width: 10%;
+    }
+    .table tbody td .img {
+      width: 100px;
+      height: 80px;
+    }
+    .table tbody td .email span {
+      display: block;
+    }
+    .table tbody td .email span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    input.quantity {
+      display: flex;
+      width: 20px;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+    .quan,
+    .del {
+      display: flex;
+      justify-content: center;
+      height: 30px;
+    }
+    button.close {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+    .checkout {
+      margin-top: 20px;
+      margin-left: auto;
+      bottom: 25px;
+      height: 55px;
+      width: 150px;
+      background-color: #6bce04;
+      border: none;
+      color: #f0f0f0;
+      font-weight: bold;
+      cursor: pointer;
+    }
     
   </style>
   <body>
@@ -316,18 +399,91 @@
     </div>
     <div class="slide">
       <div class="container">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <img src="./slider1.jpg" style="width: 100%" />
-          </div>
-
-          <div class="mySlides fade">
-            <img src="./slider2" style="width: 100%" />
-          </div>
-
-          <div class="mySlides fade">
-            <img src="./slider3.webp" style="width: 100%" />
-          </div>
+        <p class="cart_head">Your Cart</p>
+        <table class="table">
+          <thead class="thead-primary">
+            <tr>
+              <th>&nbsp;</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>total</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div>image</div>
+              </td>
+              <td>
+                <div class="email">
+                  <span>Sneakers Shoes 2020 For Men </span>
+                  <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+                </div>
+              </td>
+              <td>$44.99</td>
+              <td class="quan">
+                <input
+                  type="text"
+                  name="quantity"
+                  class="quantity form-control input-number"
+                  value="2"
+                  min="1"
+                  max="100"
+                />
+              </td>
+              <td>$89.98</td>
+              <td class="del">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>image</div>
+              </td>
+              <td>
+                <div class="email">
+                  <span>Sneakers Shoes 2020 For Men </span>
+                  <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+                </div>
+              </td>
+              <td>$44.99</td>
+              <td class="quan">
+                <input
+                  type="text"
+                  name="quantity"
+                  class="quantity form-control input-number"
+                  value="2"
+                  min="1"
+                  max="100"
+                />
+              </td>
+              <td>$89.98</td>
+              <td class="del">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <button class="checkout">
+            Checkout
+          </button>
         </div>
       </div>
     </div>
@@ -387,23 +543,6 @@
     <script>
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
-      }
-      let slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 second
       }
     </script>
   </body>

@@ -196,7 +196,7 @@
     }
     .slide {
       background: #f2f2f2;
-      height: 800px;
+      padding-bottom: 80px;
     }
     .footer_head {
       height: 60px;
@@ -322,7 +322,7 @@
             <a href="mailto:khadkanripesh@gmail.com">khadkanripesh@gmail.com</a>
           </div>
           <div class="right">
-            <a href="#">
+            <a href="./cart.html">
               <li><i class="fa-solid fa-cart-shopping"></i>Cart</li>
             </a>
             <a href="#">
@@ -374,7 +374,7 @@
             <a href="./index.html">
               <li><i class="fa-solid fa-house"></i>Home</li>
             </a>
-            <a href="#">
+            <a href="./products.html">
               <li>Products</li>
             </a>
           </div>
@@ -458,6 +458,12 @@
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
       }
+      const addBtn = document.querySelector(".addtocartbtn");
+      addBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // prevents the default behavior of the anchor tag
+        // Your add to cart functionality here
+        window.location.href = "http://localhost:5500/cart.html";
+      });
     </script>
   </body>
 </html>
