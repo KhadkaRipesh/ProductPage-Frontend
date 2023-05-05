@@ -239,6 +239,74 @@
     .box i {
       font-size: 16px;
     }
+
+    p.product_head {
+      margin-top: 0em;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 900;
+      margin-left: 20px;
+      padding-top: 20px;
+    }
+    /* for each product */
+    .product {
+      height: 320px;
+      width: 300px;
+      border: 1px solid green;
+    }
+    .product .image {
+      height: 250px;
+      width: 200px;
+      border: 1px solid green;
+      justify-content: center;
+    }
+    .product .detail {
+      height: 36px;
+      border: 1px solid green;
+    }
+    .product .price {
+      height: 30px;
+      border: 1px solid green;
+    }
+    .product .resp {
+      display: flex;
+      justify-content: center;
+    }
+    /* hiding add to cart */
+    .addtocartbtn {
+      display: none;
+      bottom: 25px;
+      height: 55px;
+      width: 150px;
+      z-index: 2;
+      margin-top: 196px;
+      margin-left: -50px;
+      background-color: #6bce04;
+      border: none;
+      color: #f0f0f0;
+      font-weight: bold;
+    }
+    /* displaying add to cart on hover */
+    .product:hover .addtocartbtn {
+      display: block;
+      animation: fadeIn 1s;
+      -webkit-animation: fadeIn 1s;
+      -moz-animation: fadeIn 1s;
+      -o-animation: fadeIn 1s;
+      -ms-animation: fadeIn 1s;
+    }
+    .addtocartbtn:hover {
+      background-color: #222222;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   </style>
   <body>
     <nav>
@@ -298,10 +366,10 @@
             </div>
           </div>
           <div class="right">
-            <a href="#">
+            <a href="./index.html">
               <li><i class="fa-solid fa-house"></i>Home</li>
             </a>
-            <a href="./products.html">
+            <a href="#">
               <li>Products</li>
             </a>
           </div>
@@ -310,17 +378,18 @@
     </div>
     <div class="slide">
       <div class="container">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <img src="./slider1.jpg" style="width: 100%" />
-          </div>
-
-          <div class="mySlides fade">
-            <img src="./slider2" style="width: 100%" />
-          </div>
-
-          <div class="mySlides fade">
-            <img src="./slider3.webp" style="width: 100%" />
+        <p class="product_head">Product List</p>
+        <div class="products">
+          <div class="product">
+            <div class="resp">
+              <div class="image">
+                <button class="addtocartbtn">
+                  <i class="fa-solid fa-cart-shopping"></i> Add to cart
+                </button>
+              </div>
+            </div>
+            <div class="detail"></div>
+            <div class="price"></div>
           </div>
         </div>
       </div>
@@ -381,23 +450,6 @@
     <script>
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
-      }
-      let slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 second
       }
     </script>
   </body>
