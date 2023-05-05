@@ -227,20 +227,13 @@
     }
     .social {
       display: flex;
+      margin-left: 10px;
     }
     .social i {
       font-size: 25px;
     }
-    .box li {
-      font-size: 18px;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
-    .box i {
-      font-size: 16px;
-    }
 
-    p.product_head {
+    p.detail_head {
       margin-top: 0em;
       text-transform: uppercase;
       font-size: 30px;
@@ -248,69 +241,49 @@
       margin-left: 20px;
       padding-top: 20px;
     }
-    .products {
+
+    .detail {
       display: flex;
       gap: 50px;
     }
-    /* for each product */
-    .product {
-      height: 320px;
-      width: 300px;
-      border: 1px solid green;
-    }
-    .product .image {
-      height: 250px;
-      width: 200px;
+    .detail .image {
+      height: 460px;
+      width: 450px;
       border: 1px solid green;
       justify-content: center;
     }
-    .product .detail {
-      height: 36px;
+    .detail .desc {
+      height: 460px;
+      width: 450px;
       border: 1px solid green;
-    }
-    .product .price {
-      height: 30px;
-      border: 1px solid green;
-    }
-    .product .resp {
-      display: flex;
       justify-content: center;
     }
-    /* hiding add to cart */
     .addtocartbtn {
-      display: none;
+      margin: 20px;
       bottom: 25px;
       height: 55px;
       width: 150px;
-      z-index: 2;
-      margin-top: 196px;
-      margin-left: -50px;
       background-color: #6bce04;
       border: none;
       color: #f0f0f0;
       font-weight: bold;
     }
-
-    /* displaying add to cart on hover */
-    .product:hover .addtocartbtn {
-      display: block;
-      animation: fadeIn 1s;
-      -webkit-animation: fadeIn 1s;
-      -moz-animation: fadeIn 1s;
-      -o-animation: fadeIn 1s;
-      -ms-animation: fadeIn 1s;
+    .desc_title {
+      font-size: 36px;
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+    .detail .more {
+      height: 180px;
+      margin-left: 10px;
+    }
+    .share h6 {
+      font-size: 18px;
+      margin-block-end: 1em;
+      margin-left: 20px;
     }
     .addtocartbtn:hover {
-      background-color: #222222;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      background-color: #0000ff;
     }
   </style>
   <body>
@@ -383,20 +356,43 @@
     </div>
     <div class="slide">
       <div class="container">
-        <p class="product_head">Product List</p>
-        <div class="products">
-          <div class="product">
-            <a href="./detail.html">
-              <div class="resp">
-                <div class="image">
-                  <button class="addtocartbtn">
-                    <i class="fa-solid fa-cart-shopping"></i> Add to cart
-                  </button>
-                </div>
+        <p class="detail_head">Product Detail</p>
+        <div class="detail">
+          <div class="image"></div>
+          <div class="desc">
+            <div class="desc_title">Product Title</div>
+            <div class="more">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quibusdam molestias similique neque ex magnam ea dolorum iure
+                aliquid. Accusamus hic minima adipisci ducimus. Quisquam
+                voluptas necessitatibus neque architecto cum reiciendis corporis
+                facilis! Repudiandae ipsa ipsam ea magni sapiente minima quos.
+              </p>
+            </div>
+            <div class="share">
+              <h6>Share this product on:</h6>
+              <div class="social">
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-facebook"></i>
+                  </li>
+                </a>
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </li>
+                </a>
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-twitter"></i>
+                  </li>
+                </a>
               </div>
-              <div class="detail"></div>
-              <div class="price"></div>
-            </a>
+            </div>
+            <button class="addtocartbtn">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
           </div>
         </div>
       </div>
