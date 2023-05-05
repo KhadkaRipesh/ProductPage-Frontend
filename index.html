@@ -198,6 +198,49 @@
       background: #f2f2f2;
       height: 800px;
     }
+    footer {
+    }
+    .footer_head {
+      height: 60px;
+      background-color: #6bce04;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .footer_end {
+      height: 60px;
+      background-color: #222222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #6c6c6c;
+      font-size: 14px;
+    }
+    footer .row {
+      height: 400px;
+      align-items: center;
+    }
+    .flexbox {
+      display: flex;
+      gap: 80px;
+    }
+    .social {
+      display: flex;
+    }
+    .social i {
+      font-size: 25px;
+    }
+    .box li {
+      font-size: 18px;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .box i{
+      font-size: 16px;
+    }
   </style>
   <body>
     <nav>
@@ -225,7 +268,7 @@
     <div class="bottom">
       <div class="container">
         <div class="row">
-          <h1>Lugaa</h1>
+          <h1>Lugaa haru.com</h1>
           <form>
             <input type="search" placeholder="Search..." />
             <button type="submit">Search</button>
@@ -284,6 +327,59 @@
         </div>
       </div>
     </div>
+    <footer>
+      <div class="footer_head">
+        <div class="text">Buy best outfit at your choices</div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="flexbox">
+            <div class="box">
+              <h1>About Lugaharu</h1>
+              <a href="#">
+                <li><i class="fa-solid fa-location-dot"></i> Nepal</li>
+              </a>
+              <a href="#">
+                <li>
+                  <i class="fa-solid fa-envelope"></i>khadkanripesh@gmail.com
+                </li>
+              </a>
+              <a href="#">
+                <li><i class="fa-solid fa-phone"></i>9825013777</li>
+              </a>
+            </div>
+            <div class="box1">
+              <h1>Find us on:</h1>
+              <div class="social">
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-facebook"></i>
+                  </li>
+                </a>
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </li>
+                </a>
+                <a href="#">
+                  <li>
+                    <i class="fa-brands fa-twitter"></i>
+                  </li>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_end">
+        <div class="container">
+          <p>
+            &copy; <a href="#"><strong>Lugaharu.com</strong> </a>-All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
     <script>
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
