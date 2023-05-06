@@ -66,7 +66,7 @@
     .bottom {
       padding: 24px 0;
     }
-    form {
+    form.search {
       color: #555;
       display: flex;
       padding: 2px;
@@ -98,7 +98,7 @@
       color: #bbb;
     }
 
-    button[type="submit"] {
+    button.search {
       text-indent: -999px;
       overflow: hidden;
       width: 40px;
@@ -191,12 +191,24 @@
       color: #6bce04;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
+    .dash_nav {
+      border: 1px solid #6bce04;
+      /* width: 263px; */
+      font-size: 13px;
+      background-color: #fff;
+      height: 80px;
+    }
+    .dash_nav li {
+      border-bottom: 1px solid #dddddd;
+      color: #6c6c6c;
+      height: 40px;
+    }
     .show {
       display: block;
     }
     .slide {
       background: #f2f2f2;
-      height: 800px;
+      padding-bottom: 80px;
     }
     .footer_head {
       height: 60px;
@@ -227,63 +239,128 @@
     }
     .social {
       display: flex;
-      margin-left: 10px;
     }
     .social i {
       font-size: 25px;
     }
-
-    p.detail_head {
-      margin-top: 0em;
-      text-transform: uppercase;
-      font-size: 30px;
-      font-weight: 900;
-      margin-left: 20px;
-      padding-top: 20px;
-    }
-
-    .detail {
-      display: flex;
-      gap: 50px;
-    }
-    .detail .image {
-      height: 460px;
-      width: 450px;
-      border: 1px solid green;
-      justify-content: center;
-    }
-    .detail .desc {
-      height: 460px;
-      width: 450px;
-      border: 1px solid green;
-      justify-content: center;
-    }
-    .addtocartbtn {
-      margin: 20px;
-      bottom: 25px;
-      height: 55px;
-      width: 150px;
-      background-color: #6bce04;
-      border: none;
-      color: #f0f0f0;
-      font-weight: bold;
-    }
-    .desc_title {
-      font-size: 36px;
-      margin-left: 10px;
-      margin-top: 20px;
-    }
-    .detail .more {
-      height: 180px;
-      margin-left: 10px;
-    }
-    .share h6 {
+    .box li {
       font-size: 18px;
-      margin-block-end: 1em;
-      margin-left: 20px;
+      gap: 15px;
+      margin-bottom: 10px;
     }
-    .addtocartbtn:hover {
-      background-color: #0000ff;
+    .box i {
+      font-size: 16px;
+    }
+
+    /* for form */
+    .slide form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .slide h2 {
+      text-align: center;
+    }
+    .slide .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: #008cba;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .slide p {
+      text-align: center;
+    }
+    .slide a {
+      color: #008cba;
+    }
+    .slide h2 {
+      margin-block-start: 0em;
+      padding-top: 20px;
+      font-size: 36px;
+    }
+    .slide .dash {
+      display: flex;
+      gap: 40px;
+    }
+    /* creating tables */
+    .table thead.thead-primary {
+      border-collapse: collapse;
+      background: #6bce04;
+    }
+    .table thead th {
+      border: none;
+      padding: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: white;
+    }
+    table {
+      min-width: 1000px !important;
+      width: 100%;
+      background: #fff;
+      -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+      -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+      box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+    }
+    .table tbody tr {
+      margin-bottom: 10px;
+    }
+    .table tbody th,
+    .table tbody td {
+      border: none;
+      padding: 30px;
+      font-size: 14px;
+      background: #fff;
+      border-bottom: 4px solid #f8f9fd;
+      vertical-align: middle;
+    }
+    .table tbody td.quantity {
+      width: 10%;
+    }
+    .table tbody td .img {
+      width: 100px;
+      height: 80px;
+    }
+    .table tbody td .email span {
+      display: block;
+    }
+    .table tbody td .email span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    .slide li:hover {
+      cursor: pointer;
+      box-shadow: #6c6c6c;
+      /* color: #6bce04; */
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    .accContent {
+      /* border: 1px solid black; */
+      text-align: center;
+    }
+    .account {
+      margin-left: 250px;
     }
   </style>
   <body>
@@ -313,9 +390,9 @@
       <div class="container">
         <div class="row">
           <h1>Lugaa haru.com</h1>
-          <form>
+          <form class="search">
             <input type="search" placeholder="Search..." />
-            <button type="submit">Search</button>
+            <button class="search">Search</button>
           </form>
         </div>
       </div>
@@ -356,43 +433,82 @@
     </div>
     <div class="slide">
       <div class="container">
-        <p class="detail_head">Product Detail</p>
-        <div class="detail">
-          <div class="image"></div>
-          <div class="desc">
-            <div class="desc_title">Product Title</div>
-            <div class="more">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam molestias similique neque ex magnam ea dolorum iure
-                aliquid. Accusamus hic minima adipisci ducimus. Quisquam
-                voluptas necessitatibus neque architecto cum reiciendis corporis
-                facilis! Repudiandae ipsa ipsam ea magni sapiente minima quos.
-              </p>
+        <h2>Welcome to Your Dashboard</h2>
+        <div class="dash">
+          <div class="dash_nav">
+            <!-- <ul> -->
+            <li
+              id="ordersTab"
+              style="background-color: #6bce04; color: #f0f0f0"
+              ,
+            >
+              My Placed Orders
+            </li>
+            <li id="accountTab">My Account</li>
+            <!-- </ul> -->
+          </div>
+
+          <div class="content">
+            <div class="orderContent">
+              <table class="table">
+                <thead class="thead-primary">
+                  <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>image</div>
+                    </td>
+                    <td>
+                      <div class="email">
+                        <span>Sneakers Shoes 2020 For Men </span>
+                        <span
+                          >Fugiat voluptates quasi nemo, ipsa perferendis</span
+                        >
+                      </div>
+                    </td>
+                    <td>$44.99</td>
+                    <td class="quan">1</td>
+                    <td>$44.99</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>image</div>
+                    </td>
+                    <td>
+                      <div class="email">
+                        <span>Sneakers Shoes 2020 For Men </span>
+                        <span
+                          >Fugiat voluptates quasi nemo, ipsa perferendis</span
+                        >
+                      </div>
+                    </td>
+                    <td>$44.99</td>
+                    <td class="quan">1</td>
+                    <td>$44.99</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="share">
-              <h6>Share this product on:</h6>
-              <div class="social">
-                <a href="#">
-                  <li>
-                    <i class="fa-brands fa-facebook"></i>
-                  </li>
-                </a>
-                <a href="#">
-                  <li>
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </li>
-                </a>
-                <a href="#">
-                  <li>
-                    <i class="fa-brands fa-twitter"></i>
-                  </li>
-                </a>
+            <div class="account" style="display: none">
+              <div class="accContent">
+                <h2>Manage Your Account</h2>
+                <h4>Your Details</h4>
+                <p>Name</p>
+                <p>Email</p>
+                <br />
+                <br />
+                <a href="./edit.html">Edit Profile</a> <br />
+                <br />
+                <a href="./changepassword.html">Change Password</a>
               </div>
             </div>
-            <button class="addtocartbtn">
-              <i class="fa-solid fa-cart-shopping"></i> Add to cart
-            </button>
           </div>
         </div>
       </div>
@@ -454,6 +570,30 @@
       function myFunction() {
         document.getElementById("drop").classList.toggle("show");
       }
+      const ordersTab = document.getElementById("ordersTab");
+      const accountTab = document.getElementById("accountTab");
+      const orderContent = document.querySelector(".orderContent");
+      const accountContent = document.querySelector(".account");
+
+      ordersTab.addEventListener("click", function () {
+        console.log("orderClikced");
+        orderContent.style.display = "block";
+        accountContent.style.display = "none";
+        ordersTab.style.backgroundColor = "#6bce04";
+        ordersTab.style.color = "#f0f0f0";
+        accountTab.style.backgroundColor = "";
+        accountTab.style.color = "";
+      });
+
+      accountTab.addEventListener("click", function () {
+        console.log("accountClikced");
+        accountTab.style.backgroundColor = "#6bce04";
+        orderContent.style.display = "none";
+        accountContent.style.display = "block";
+        ordersTab.style.backgroundColor = "";
+        ordersTab.style.color = "";
+        accountTab.style.color = "#f0f0f0";
+      });
     </script>
   </body>
 </html>
